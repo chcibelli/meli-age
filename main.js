@@ -15,6 +15,8 @@ $( document ).ready(function() {
             return false;
         }
         
+        grecaptcha.execute();
+
         let url = 'https://api.mercadolibre.com/sites/'+site+'/search?nickname='+nickname.trim();
         
         $.getJSON( url, function( data ) {
