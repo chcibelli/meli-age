@@ -40,9 +40,15 @@ $( document ).ready(function() {
         
     });	
     
-    $("input[type=text]").keyup(function () {  
-        $(this).val($(this).val().toUpperCase());  
-    });  
+    $('#nickname').on('keyup',function(e) {
+        $(this).val($(this).val().toUpperCase());
+    });
+
+    $('#nickname').on('keypress',function(e) {
+        if(e.which == 13) {
+            $('#main-btn').click();
+        }
+    });
     
 });	
 
