@@ -7,7 +7,7 @@ $( document ).ready(function() {
         let nickname = $('#nickname').val();
         let site = $('#hidden_site').val();
         
-        if(nickname == '') {
+        if(nickname == '' || site == '') {
             $('#result').html('<p>Elegí tu país e ingresá tu apodo/nickname :(</p>');
             $('#result').show();
             $('#share').html('');
