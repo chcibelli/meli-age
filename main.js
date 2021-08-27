@@ -43,7 +43,7 @@ $( document ).ready(function() {
                 result += '<p class="info"> Y esta era la home del sitio en ese momento </p>';
                 result += '<p><a href="img/'+ry+'_full-min.png" target="_blank"><img src="img/'+ry+'_full-min.png" class="website" ></a></p>';
                 
-                let tweet = 'Llevo usando Mercado Libre ';
+                let tweet = 'Uso Mercado Libre hace ';
                 if(difference.y >0) { tweet += difference.y + (difference.y > 1 ? ' años' : ' año'); }
                 if(difference.m >0) { tweet += ', ' + difference.m + (difference.m > 1 ? ' meses' : ' mes'); }
                 if(difference.d >0) { tweet += ' y ' + difference.d + (difference.d > 1 ? ' días' : ' día'); }
@@ -57,7 +57,6 @@ $( document ).ready(function() {
                 
             }
         });			
-        
         
     });	
     
