@@ -12,30 +12,28 @@ $( "#main-btn" ).click(function() {
     }
     
     let site = 'MLA';
-    var url = 'https://api.mercadolibre.com/sites/'+site+'/search?nickname='+nickname;
+    var url = 'https://api.mercadolibre.com/sites/'+site+'/search?nickname='+nickname.trim();
     
     $.getJSON( url, function( data ) {
         
         if (typeof data.seller === "undefined") {
-            $('#result').html('No encontre el apodo/nickname :( ');
+            $('#result').html('<p>No encontre el apodo/nickname :(</p>');
+            $('#result').show();
         } else {
             var difference = getDifference(new Date(data.seller.registration_date),new Date());
             
-            let result = 'Te registraste el ' + formatDate(new Date(data.seller.registration_date));
-            result += '<br><br>';
+            let result = '<p>Te registraste el ' + formatDate(new Date(data.seller.registration_date)) + '</p>';
             
-            result += 'Estas usando Mercado Libre hace ';
+            result += '<p>Estas usando Mercado Libre hace ';
             if(difference.y >0) { result += difference.y + (difference.y > 1 ? ' años' : ' año') + ', '; }
             if(difference.m >0) { result += difference.m + (difference.m > 1 ? ' meses' : ' mes') + ', '; }
             if(difference.d >0) { result += difference.d + (difference.d > 1 ? ' días' : ' día'); }
-            result += '<br><br>';
+            result += '</p>';
             
             $('#result').html(result);
             $('#result').show();
             
-            console.log(difference);
         }
-        
     });			
     
     
