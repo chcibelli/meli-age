@@ -37,10 +37,10 @@ $( document ).ready(function() {
                 result += '<p class="divider"></p>'
 
                 let ry = new Date(data.seller.registration_date).getFullYear();
-                result += '<p class="info"> Asi era el logo de MELI </p>';
+                result += '<p class="info"> Asi era el logo de MELI ese año </p>';
                 result += '<p><img src="img/'+ry+'_logo-min.png" class="logo" ></p>';
                 result += '<p></p>';
-                result += '<p class="info"> Tambien podes ver como se veia la home de ese momento </p>';
+                result += '<p class="info"> Y esta era la home del sitio en ese momento </p>';
                 result += '<p><a href="img/'+ry+'_full-min.png" target="_blank"><img src="img/'+ry+'_full-min.png" class="website" ></a></p>';
                 
                 let tweet = 'Llevo usando Mercado Libre ';
