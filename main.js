@@ -38,6 +38,11 @@ $( "#main-btn" ).click(function() {
     
     
 });	
+
+$("input[type=text]").keyup(function () {  
+    $(this).val($(this).val().toUpperCase());  
+});  
+
 });	
 
 function pad(number) {
