@@ -16,9 +16,6 @@ body {
     max-width: 330px;
     padding: 15px;
     margin: auto;
-}
-
-.form-signin .checkbox {
     font-weight: 400;
 }
 
@@ -49,11 +46,7 @@ body {
     padding-bottom: 2px;
 }
 
-.website {
-    max-width: 300px;
-}
-
-.logo {
+.website, .logo {
     max-width: 300px;
 }
 

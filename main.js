@@ -5,16 +5,16 @@ $( document ).ready(function() {
         $('#result').hide();
         
         let nickname = $('#nickname').val();
+        let site = $('#hidden_site').val();
         
         if(nickname == '') {
-            $('#result').html('<p>Ingresá tu apodo/nickname :(</p>');
+            $('#result').html('<p>Elegí tu país e ingresá tu apodo/nickname :(</p>');
             $('#result').show();
             $('#share').html('');
             $('#share').hide();
             return false;
         }
         
-        let site = 'MLA';
         let url = 'https://api.mercadolibre.com/sites/'+site+'/search?nickname='+nickname.trim();
         
         $.getJSON( url, function( data ) {
@@ -33,9 +33,9 @@ $( document ).ready(function() {
                 if(difference.m >0) { result += ', ' + difference.m + (difference.m > 1 ? ' meses' : ' mes'); }
                 if(difference.d >0) { result += ' y ' + difference.d + (difference.d > 1 ? ' días' : ' día'); }
                 result += '</p>';
-
+                
                 result += '<p class="divider"></p>'
-
+                
                 let ry = new Date(data.seller.registration_date).getFullYear();
                 result += '<p class="info"> Asi era el logo de MELI ese año </p>';
                 result += '<p><img src="img/'+ry+'_logo-min.png" class="logo" ></p>';
@@ -70,6 +70,37 @@ $( document ).ready(function() {
             $('#main-btn').click();
         }
     });
+    
+    var availableTags = [ 
+        {label:"Argentina", value:"MLA"}, 
+        {label:"Bolivia",value:"MBO"},
+        {label:"Brasil", value:"MLB"},
+        {label:"Chile", value:"MLC"},
+        {label:"Colombia", value:"MCO"},
+        {label:"Costa Rica", value:"MCR"},
+        {label:"Cuba", value:"MCU"},
+        {label:"Dominicana", value:"MRD"},
+        {label:"Ecuador", value:"MEC"},
+        {label:"Guatemala", value:"MGT"},
+        {label:"Honduras", value:"MHN"},
+        {label:"Mexico", value:"MLM"},
+        {label:"Nicaragua", value:"MNI"},
+        {label:"Panama", value:"MPE"},
+        {label:"Paraguay", value:"MPY"},
+        {label:"Perú", value:"MPE"},
+        {label:"Paraguay", value:"MPE"},
+        {label:"Uruguay", value:"MLU"},
+        {label:"Venezuela", value:"MLV"}
+    ];
+    
+    $( "#site" ).autocomplete({
+        source: availableTags,
+        select: function (event, ui) {
+            $('#hidden_site').val(ui.item.value);
+            $('#site').val(ui.item.label);
+            return false;
+        }
+    }); 
     
 });	
 

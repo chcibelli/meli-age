@@ -29,12 +29,22 @@
 	<link href="main.css" rel="stylesheet">
 	<script src="main.js?v=1.7"></script>
 	
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
 </head>
 <body class="text-center">
 	
 	<main class="form-signin">
 		<h1 class="h3 mb-4 fw-normal">¿Cuánto hace que compras y vendes por Mercado Libre?</h1>
+
 		
+		<div class="form-floating mb-3">
+			<input type="hidden" id="hidden_site" value="">
+			<input type="text" id="site" class="form-control" id="floatingInput" value="">
+			<label for="floatingInput">Elegí tu país</label>
+		</div>
+
 		<div class="form-floating mb-3">
 			<input type="text" id="nickname" class="form-control" id="floatingInput" value="">
 			<label for="floatingInput">Ingresá tu Apodo/Nickname</label>
