@@ -25,9 +25,9 @@ $( "#main-btn" ).click(function() {
             let result = '<p>Te registraste el ' + formatDate(new Date(data.seller.registration_date)) + '</p>';
             
             result += '<p>Estas usando Mercado Libre hace ';
-            if(difference.y >0) { result += difference.y + (difference.y > 1 ? ' años' : ' año') + ', '; }
-            if(difference.m >0) { result += difference.m + (difference.m > 1 ? ' meses' : ' mes') + ', '; }
-            if(difference.d >0) { result += difference.d + (difference.d > 1 ? ' días' : ' día'); }
+            if(difference.y >0) { result += difference.y + (difference.y > 1 ? ' años' : ' año'); }
+            if(difference.m >0) { result += ', ' + difference.m + (difference.m > 1 ? ' meses' : ' mes'); }
+            if(difference.d >0) { result += ' y ' + difference.d + (difference.d > 1 ? ' días' : ' día'); }
             result += '</p>';
             
             $('#result').html(result);
