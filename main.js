@@ -33,28 +33,24 @@ $( document ).ready(function() {
                 if(difference.m >0) { result += ', ' + difference.m + (difference.m > 1 ? ' meses' : ' mes'); }
                 if(difference.d >0) { result += ' y ' + difference.d + (difference.d > 1 ? ' días' : ' día'); }
                 result += '</p>';
-
+                
                 let img = false;
-
-                /*if(difference.y > 15) {
+                img = true;
+                
+                if(img) {
+                    result += '<p> Asi era el logo de MELI el año que te registraste! </p>';
                     result += '<p><img src="img/84.jpg" width="300"></p>';
-                    img = true;
                 }
-
-                if(difference.y > 1 && !img) {
-                    result += '<p><img src="img/baby.jpg" width="300"></p>';
-                    img = true;
-                }*/
                 
                 let tweet = 'Llevo usando Mercado Libre ';
                 if(difference.y >0) { tweet += difference.y + (difference.y > 1 ? ' años' : ' año'); }
                 if(difference.m >0) { tweet += ', ' + difference.m + (difference.m > 1 ? ' meses' : ' mes'); }
                 if(difference.d >0) { tweet += ' y ' + difference.d + (difference.d > 1 ? ' días' : ' día'); }
                 tweet += ' ¿Y vos? // ';
-
+                
                 $('#share').html('<a class="twitter-share-button" href="https://twitter.com/intent/tweet" data-size="large"  data-url="https://chcibelli.github.io/meli-how-old-are-u/" data-text="'+tweet+'">Tweet</a>');
                 twttr.widgets.load();
-
+                
                 $('#result').html(result);
                 $('#result, #share').show();
                 
@@ -67,13 +63,13 @@ $( document ).ready(function() {
     /*$('#nickname').on('keyup',function(e) {
         $(this).val($(this).val().toUpperCase());
     });*/
-
+    
     $('#nickname').on('keypress',function(e) {
         if(e.which == 13) {
             $('#main-btn').click();
         }
     });
-
+    
 });	
 
 function pad(number) {
