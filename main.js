@@ -1,11 +1,5 @@
 $( document ).ready(function() {
 
-    grecaptcha.ready(function() {
-        grecaptcha.render("recaptcha-container", {
-          "sitekey": "6LfMNSscAAAAACW9fJeok9__rexGw9XLDIoFNZcb"
-        });
-      });    
-    
     $( "#main-btn" ).click(function() {
         
         $('#result').hide();
@@ -21,8 +15,6 @@ $( document ).ready(function() {
             return false;
         }
         
-        grecaptcha.execute();
-
         let url = 'https://api.mercadolibre.com/sites/'+site+'/search?nickname='+nickname.trim();
         
         $.getJSON( url, function( data ) {
