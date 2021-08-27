@@ -1,4 +1,10 @@
 $( document ).ready(function() {
+
+    grecaptcha.ready(function() {
+        grecaptcha.render("recaptcha-container", {
+          "sitekey": "6LfMNSscAAAAACW9fJeok9__rexGw9XLDIoFNZcb"
+        });
+      });    
     
     $( "#main-btn" ).click(function() {
         
