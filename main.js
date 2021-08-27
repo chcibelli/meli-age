@@ -33,14 +33,15 @@ $( document ).ready(function() {
                 if(difference.m >0) { result += ', ' + difference.m + (difference.m > 1 ? ' meses' : ' mes'); }
                 if(difference.d >0) { result += ' y ' + difference.d + (difference.d > 1 ? ' días' : ' día'); }
                 result += '</p>';
-                
-                let img = false;
-                img = true;
-                
-                if(img) {
-                    result += '<p> Asi era el logo de MELI el año que te registraste! </p>';
-                    result += '<p><img src="img/84.jpg" width="300"></p>';
-                }
+
+                result += '<p class="divider"></p>'
+
+                let ry = new Date(data.seller.registration_date).getFullYear();
+                result += '<p class="info"> Asi era el logo de MELI </p>';
+                result += '<p><img src="img/'+ry+'_logo-min.png" class="logo" ></p>';
+                result += '<p></p>';
+                result += '<p class="info"> Tambien podes ver como se veia la home de ese momento </p>';
+                result += '<p><a href="img/'+ry+'_full-min.png" target="_blank"><img src="img/'+ry+'_full-min.png" class="website" ></a></p>';
                 
                 let tweet = 'Llevo usando Mercado Libre ';
                 if(difference.y >0) { tweet += difference.y + (difference.y > 1 ? ' años' : ' año'); }

@@ -48,3 +48,19 @@ body {
     padding-top:3px;
     padding-bottom: 2px;
 }
+
+.website {
+    max-width: 300px;
+}
+
+.logo {
+    max-width: 300px;
+}
+
+.divider {
+    border-bottom:solid 1px gray;
+}
+
+.info {
+    font-weight: normal;
+}
