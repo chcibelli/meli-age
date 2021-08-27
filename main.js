@@ -9,6 +9,8 @@ $( document ).ready(function() {
         if(nickname == '') {
             $('#result').html('<p>Ingresá tu apodo/nickname :(</p>');
             $('#result').show();
+            $('#share').html('');
+            $('#share').hide();
             return false;
         }
         
@@ -19,6 +21,8 @@ $( document ).ready(function() {
             
             if (typeof data.seller === "undefined") {
                 $('#result').html('<p>No encontre el apodo/nickname :(</p>');
+                $('#share').html('');
+                $('#share').hide();    
                 $('#result').show();
             } else {
                 var difference = getDifference(new Date(data.seller.registration_date),new Date());
@@ -41,7 +45,7 @@ $( document ).ready(function() {
                 twttr.widgets.load();
 
                 $('#result').html(result);
-                $('#result').show();
+                $('#result').$('#share').show();
                 
             }
         });			
