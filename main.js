@@ -31,6 +31,14 @@ $( document ).ready(function() {
                 if(difference.d >0) { result += ' y ' + difference.d + (difference.d > 1 ? ' días' : ' día'); }
                 result += '</p>';
                 
+                let tweet = 'Llevo usando Mercado Libre ';
+                if(difference.y >0) { tweet += difference.y + (difference.y > 1 ? ' años' : ' año'); }
+                if(difference.m >0) { tweet += ', ' + difference.m + (difference.m > 1 ? ' meses' : ' mes'); }
+                if(difference.d >0) { tweet += ' y ' + difference.d + (difference.d > 1 ? ' días' : ' día'); }
+                tweet += ' ¿y vos?';
+
+                $('.twitter-share-button').attr('href','https://twitter.com/intent/tweet?text='+tweet);
+                
                 $('#result').html(result);
                 $('#result').show();
                 
@@ -40,16 +48,16 @@ $( document ).ready(function() {
         
     });	
     
-    $('#nickname').on('keyup',function(e) {
+    /*$('#nickname').on('keyup',function(e) {
         $(this).val($(this).val().toUpperCase());
-    });
+    });*/
 
     $('#nickname').on('keypress',function(e) {
         if(e.which == 13) {
             $('#main-btn').click();
         }
     });
-    
+
 });	
 
 function pad(number) {
