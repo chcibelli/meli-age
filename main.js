@@ -26,7 +26,6 @@ $( document ).ready(function() {
                 $('#result').show();
             } else {
                 var difference = getDifference(new Date(data.seller.registration_date),new Date());
-                
                 let result = '<p>Te registraste el ' + formatDate(new Date(data.seller.registration_date)) + '</p>';
                 
                 result += '<p>Estas usando Mercado Libre hace ';
@@ -34,6 +33,18 @@ $( document ).ready(function() {
                 if(difference.m >0) { result += ', ' + difference.m + (difference.m > 1 ? ' meses' : ' mes'); }
                 if(difference.d >0) { result += ' y ' + difference.d + (difference.d > 1 ? ' días' : ' día'); }
                 result += '</p>';
+
+                let img = false;
+
+                /*if(difference.y > 15) {
+                    result += '<p><img src="img/84.jpg" width="300"></p>';
+                    img = true;
+                }
+
+                if(difference.y > 1 && !img) {
+                    result += '<p><img src="img/baby.jpg" width="300"></p>';
+                    img = true;
+                }*/
                 
                 let tweet = 'Llevo usando Mercado Libre ';
                 if(difference.y >0) { tweet += difference.y + (difference.y > 1 ? ' años' : ' año'); }
@@ -45,7 +56,7 @@ $( document ).ready(function() {
                 twttr.widgets.load();
 
                 $('#result').html(result);
-                $('#result').$('#share').show();
+                $('#result, #share').show();
                 
             }
         });			
