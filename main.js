@@ -8,7 +8,7 @@ $( document ).ready(function() {
         let site = $('#hidden_site').val();
         
         if(nickname == '' || site == '') {
-            $('#result').html('<p>Elegí tu país e ingresá tu apodo/nickname :(</p>');
+            $('#result').html('<p>Elegí tu país e ingresá tu usuario/apodo/nickname 🤔</p>');
             $('#result').show();
             $('#share').html('');
             $('#share').hide();
@@ -20,7 +20,7 @@ $( document ).ready(function() {
         $.getJSON( url, function( data ) {
             
             if (typeof data.seller === "undefined") {
-                $('#result').html('<p>No encontre el apodo/nickname :(</p>');
+                $('#result').html('<p>No encontre el usuario/apodo/nickname 😢</p>');
                 $('#share').html('');
                 $('#share').hide();    
                 $('#result').show();
