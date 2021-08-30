@@ -67,25 +67,24 @@ $( document ).ready(function() {
     });
     
     var availableTags = [ 
-        {label:"Argentina", value:"MLA"}, 
-        {label:"Bolivia",value:"MBO"},
-        {label:"Brasil", value:"MLB"},
-        {label:"Chile", value:"MLC"},
-        {label:"Colombia", value:"MCO"},
-        {label:"Costa Rica", value:"MCR"},
-        {label:"Cuba", value:"MCU"},
-        {label:"Dominicana", value:"MRD"},
-        {label:"Ecuador", value:"MEC"},
-        {label:"Guatemala", value:"MGT"},
-        {label:"Honduras", value:"MHN"},
-        {label:"Mexico", value:"MLM"},
-        {label:"Nicaragua", value:"MNI"},
-        {label:"Panama", value:"MPE"},
-        {label:"Paraguay", value:"MPY"},
-        {label:"Perú", value:"MPE"},
-        {label:"Paraguay", value:"MPE"},
-        {label:"Uruguay", value:"MLU"},
-        {label:"Venezuela", value:"MLV"}
+        {label:"Argentina 🇦🇷", value:"MLA"}, 
+        {label:"Bolivia 🇧🇴",value:"MBO"},
+        {label:"Brasil 🇧🇷", value:"MLB"},
+        {label:"Chile 🇨🇱", value:"MLC"},
+        {label:"Colombia 🇨🇴", value:"MCO"},
+        {label:"Costa Rica 🇨🇷", value:"MCR"},
+        {label:"Cuba 🇨🇺", value:"MCU"},
+        {label:"Dominicana 🇩🇴", value:"MRD"},
+        {label:"Ecuador 🇪🇨", value:"MEC"},
+        {label:"Guatemala 🇬🇹", value:"MGT"},
+        {label:"Honduras 🇭🇳", value:"MHN"},
+        {label:"Mexico 🇲🇽", value:"MLM"},
+        {label:"Nicaragua 🇳🇮", value:"MNI"},
+        {label:"Panama 🇵🇦", value:"MPE"},
+        {label:"Paraguay 🇵🇾", value:"MPY"},
+        {label:"Perú 🇵🇪", value:"MPE"},
+        {label:"Uruguay 🇺🇾", value:"MLU"},
+        {label:"Venezuela 🇻🇪", value:"MLV"}
     ];
 
     for(t=0;t<availableTags.length;t++) {
