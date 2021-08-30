@@ -47,7 +47,7 @@ $( document ).ready(function() {
                 if(difference.y >0) { tweet += difference.y + (difference.y > 1 ? ' años' : ' año'); }
                 if(difference.m >0) { tweet += ', ' + difference.m + (difference.m > 1 ? ' meses' : ' mes'); }
                 if(difference.d >0) { tweet += ' y ' + difference.d + (difference.d > 1 ? ' días' : ' día'); }
-                tweet += ' ¿Y vos? Averigualo entrando en -> ';
+                tweet += ' ¿Y vos? Averigualo en 👉 ';
                 
                 $('#share').html('<a class="twitter-share-button" href="https://twitter.com/intent/tweet" data-size="large"  data-url="https://chcibelli.github.io/meli-age/" data-text="'+tweet+'">Tweet</a>');
                 twttr.widgets.load();
