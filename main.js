@@ -66,7 +66,7 @@ $( document ).ready(function() {
         }
     });
     
-    var availableTags = [ 
+    var availableSites = [ 
         {label:"Argentina 🇦🇷", value:"MLA"}, 
         {label:"Bolivia 🇧🇴",value:"MBO"},
         {label:"Brasil 🇧🇷", value:"MLB"},
@@ -87,8 +87,8 @@ $( document ).ready(function() {
         {label:"Venezuela 🇻🇪", value:"MLV"}
     ];
 
-    for(t=0;t<availableTags.length;t++) {
-        $("#hidden_site").append(new Option(availableTags[t].label, availableTags[t].value));
+    for(t=0;t<availableSites.length;t++) {
+        $("#hidden_site").append(new Option(availableSites[t].label, availableSites[t].value));
     }
 });	
 
