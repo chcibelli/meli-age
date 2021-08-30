@@ -17,10 +17,10 @@ $( document ).ready(function() {
         
         let url = 'https://api.mercadolibre.com/sites/'+site+'/search?nickname='+nickname.trim();
         
-        $.getJSON( url, function( data ) {
+        $.getJSON(url, function(data) {
             
             if (typeof data.seller === "undefined") {
-                $('#result').html('<p>No encontre el usuario/apodo/nickname 😢</p>');
+                $('#result').html('<p> No encontre el usuario/apodo/nickname 😢</p>');
                 $('#share').html('');
                 $('#share').hide();    
                 $('#result').show();
@@ -53,11 +53,9 @@ $( document ).ready(function() {
                 twttr.widgets.load();
                 
                 $('#result').html(result);
-                $('#result, #share').show();
-                
+                $('#result, #share').show();                
             }
         });			
-        
     });	
     
     $('#nickname').on('keypress',function(e) {
