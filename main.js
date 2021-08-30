@@ -49,7 +49,7 @@ $( document ).ready(function() {
                 if(difference.d >0) { tweet += ' y ' + difference.d + (difference.d > 1 ? ' días' : ' día'); }
                 tweet += ' ¿Y vos? Averigualo entrando en -> ';
                 
-                $('#share').html('<a class="twitter-share-button" href="https://twitter.com/intent/tweet" data-size="large"  data-url="https://chcibelli.github.io/meli-how-old-are-u/" data-text="'+tweet+'">Tweet</a>');
+                $('#share').html('<a class="twitter-share-button" href="https://twitter.com/intent/tweet" data-size="large"  data-url="https://chcibelli.github.io/meli-age/" data-text="'+tweet+'">Tweet</a>');
                 twttr.widgets.load();
                 
                 $('#result').html(result);
@@ -59,10 +59,6 @@ $( document ).ready(function() {
         });			
         
     });	
-    
-    /*$('#nickname').on('keyup',function(e) {
-        $(this).val($(this).val().toUpperCase());
-    });*/
     
     $('#nickname').on('keypress',function(e) {
         if(e.which == 13) {
@@ -91,16 +87,10 @@ $( document ).ready(function() {
         {label:"Uruguay", value:"MLU"},
         {label:"Venezuela", value:"MLV"}
     ];
-    
-    $( "#site" ).autocomplete({
-        source: availableTags,
-        select: function (event, ui) {
-            $('#hidden_site').val(ui.item.value);
-            $('#site').val(ui.item.label);
-            return false;
-        }
-    }); 
-    
+
+    for(t=0;t<availableTags.length;t++) {
+        $("#hidden_site").append(new Option(availableTags[t].label, availableTags[t].value));
+    }
 });	
 
 function pad(number) {
