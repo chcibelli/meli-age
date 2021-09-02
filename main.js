@@ -23,15 +23,18 @@ $( document ).ready(function() {
                 $('#result').html('<p> No encontre el usuario/apodo/nickname 😢</p>');
                 $('#share').html('');
                 $('#share').hide();    
+                $('#share2').html('');
+                $('#share2').hide();    
                 $('#result').show();
             } else {
                 var difference = getDifference(new Date(data.seller.registration_date),new Date());
                 let result = '<p>Te registraste el ' + formatDate(new Date(data.seller.registration_date)) + '</p>';
                 
                 result += '<p>Estas usando Mercado Libre hace ';
-                if(difference.y >0) { result += difference.y + (difference.y > 1 ? ' años' : ' año'); }
-                if(difference.m >0) { result += ', ' + difference.m + (difference.m > 1 ? ' meses' : ' mes'); }
-                if(difference.d >0) { result += ' y ' + difference.d + (difference.d > 1 ? ' días' : ' día'); }
+                if(difference.y > 0) { result += difference.y + (difference.y > 1 ? ' años, ' : ' año, '); }
+                if(difference.m > 0) { result += difference.m + (difference.m > 1 ? ' meses' : ' mes'); }
+                if(difference.y > 0 || difference.m > 0) { result += ' y '; }
+                if(difference.d > 0) { result += difference.d + (difference.d > 1 ? ' días' : ' día'); }
                 result += '</p>';
                 
                 result += '<p class="divider"></p>'
@@ -43,12 +46,16 @@ $( document ).ready(function() {
                 result += '<p class="info">Y esta era la home del sitio en ese momento 👀 👀 </p>';
                 result += '<p><a href="img/'+ry+'_full-min.png" target="_blank"><img src="img/'+ry+'_full-min.png" class="website" ></a></p>';
                 
-                let tweet = 'Yo uso Mercado Libre hace ';
-                if(difference.y >0) { tweet += difference.y + (difference.y > 1 ? ' años' : ' año'); }
-                if(difference.m >0) { tweet += ', ' + difference.m + (difference.m > 1 ? ' meses' : ' mes'); }
-                if(difference.d >0) { tweet += ' y ' + difference.d + (difference.d > 1 ? ' días' : ' día'); }
+                let tweet = 'Yo uso @mercadolibre hace ';
+
+                if(difference.y > 0) { tweet += difference.y + (difference.y > 1 ? ' años, ' : ' año, '); }
+                if(difference.m > 0) { tweet += difference.m + (difference.m > 1 ? ' meses' : ' mes'); }
+                if(difference.y > 0 || difference.m > 0) { tweet += ' y '; }
+                if(difference.d > 0) { tweet += difference.d + (difference.d > 1 ? ' días' : ' día'); }
+
                 tweet += ' ¿Y vos? 👀 👀 Averigualo en 👇 ';
                 
+                $('#share2').html('<a class="twitter-share-button" href="https://twitter.com/intent/tweet" data-size="large"  data-url="https://chcibelli.github.io/meli-age/" data-text="'+tweet+'">Tweet</a>');
                 $('#share').html('<a class="twitter-share-button" href="https://twitter.com/intent/tweet" data-size="large"  data-url="https://chcibelli.github.io/meli-age/" data-text="'+tweet+'">Tweet</a>');
                 twttr.widgets.load();
                 
@@ -78,7 +85,7 @@ $( document ).ready(function() {
         {label:"Honduras 🇭🇳", value:"MHN"},
         {label:"Mexico 🇲🇽", value:"MLM"},
         {label:"Nicaragua 🇳🇮", value:"MNI"},
-        {label:"Panama 🇵🇦", value:"MPE"},
+        {label:"Panama 🇵🇦", value:"MPA"},
         {label:"Paraguay 🇵🇾", value:"MPY"},
         {label:"Perú 🇵🇪", value:"MPE"},
         {label:"Uruguay 🇺🇾", value:"MLU"},
