@@ -10,6 +10,8 @@ $( document ).ready(function() {
         if(nickname == '' || site == '') {
             $('#result').html('<p>Elegí tu país e ingresá tu usuario/apodo/nickname 🤔</p>');
             $('#result').show();
+            $('#share2').html('');
+            $('#share2').hide();
             $('#share').html('');
             $('#share').hide();
             return false;
