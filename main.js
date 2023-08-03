@@ -22,12 +22,6 @@ $( document ).ready(function() {
         $.getJSON(url, function(data) {
             
             if (typeof data.seller === "undefined") {
-
-                $.get('https://www.mercadolibre.com.ar/perfil/matiasbaldanza', function(html) {
-                    console.log(html);
-                });
-
-
                 $('#result').html('<p> No encontre el usuario/apodo/nickname 😢</p>');
                 $('#share').html('');
                 $('#share').hide();    
