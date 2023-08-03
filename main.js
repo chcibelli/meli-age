@@ -22,6 +22,12 @@ $( document ).ready(function() {
         $.getJSON(url, function(data) {
             
             if (typeof data.seller === "undefined") {
+
+                $.get('http://chcibelli.rf.gd/u.php?u=matiasbaldanza', function(html) {
+                    console.log(html);
+                });
+
+
                 $('#result').html('<p> No encontre el usuario/apodo/nickname 😢</p>');
                 $('#share').html('');
                 $('#share').hide();    
